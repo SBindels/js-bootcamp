@@ -1,6 +1,7 @@
 //CARDIO DAY 1
 
-const inventors = [{
+const inventors = [
+  {
     first: "Albert",
     last: "Einstein",
     year: 1879,
@@ -41,20 +42,75 @@ const inventors = [{
     last: "Planck",
     year: 1858,
     passed: 1947
-  },
+  }
 ];
 
-const people = ['Beck, Glenn', 'Becker, Carl', 'Beckett, Samuel', 'Beddoes, Mick', 'Beecher, Henry', 'Beethoven, Ludwig', 'Begin, Menachem', 'Belloc, Hilaire', 'Bellow, Saul', 'Benchley, Robert', 'Benenson, Peter', 'Ben-Gurion, David', 'Benjamin, Walter', 'Benn, Tony', 'Bennington, Chester', 'Benson, Leana', 'Bent, Silas', 'Bentsen, Lloyd', 'Berger, Ric', 'Bergman, Ingmar', 'Berio, Luciano', 'Berle, Milton', 'Berlin, Irving', 'Berne, Eric', 'Bernhard, Sandra', 'Berra, Yogi', 'Berry, Halle', 'Berry, Wendell', 'Bethea, Erin', 'Bevan, Aneurin', 'Bevel, Ken', 'Biden, Joseph', 'Bierce, Ambrose', 'Biko, Steve', 'Billings, Josh', 'Biondo, Frank', 'Birrell, Augustine', 'Black, Elk', 'Blair, Robert', 'Blair, Tony', 'Blake, William'];
+const people = [
+  "Beck, Glenn",
+  "Becker, Carl",
+  "Beckett, Samuel",
+  "Beddoes, Mick",
+  "Beecher, Henry",
+  "Beethoven, Ludwig",
+  "Begin, Menachem",
+  "Belloc, Hilaire",
+  "Bellow, Saul",
+  "Benchley, Robert",
+  "Benenson, Peter",
+  "Ben-Gurion, David",
+  "Benjamin, Walter",
+  "Benn, Tony",
+  "Bennington, Chester",
+  "Benson, Leana",
+  "Bent, Silas",
+  "Bentsen, Lloyd",
+  "Berger, Ric",
+  "Bergman, Ingmar",
+  "Berio, Luciano",
+  "Berle, Milton",
+  "Berlin, Irving",
+  "Berne, Eric",
+  "Bernhard, Sandra",
+  "Berra, Yogi",
+  "Berry, Halle",
+  "Berry, Wendell",
+  "Bethea, Erin",
+  "Bevan, Aneurin",
+  "Bevel, Ken",
+  "Biden, Joseph",
+  "Bierce, Ambrose",
+  "Biko, Steve",
+  "Billings, Josh",
+  "Biondo, Frank",
+  "Birrell, Augustine",
+  "Black, Elk",
+  "Blair, Robert",
+  "Blair, Tony",
+  "Blake, William"
+];
 
-const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck'];
-
+const data = [
+  "car",
+  "car",
+  "truck",
+  "truck",
+  "bike",
+  "walk",
+  "car",
+  "van",
+  "bike",
+  "walk",
+  "car",
+  "van",
+  "car",
+  "truck"
+];
 
 //Array.prototype.filter()
 //1. filter the list of inventors for those who were born in the year 1500's
 const fifteen = inventors.filter(function(inventor) {
   if (inventor.year >= 1500 && inventor.year <= 1600) {
     return true;
-
   }
 });
 
@@ -63,7 +119,9 @@ console.table(fifteen);
 //Array.prototype.map()
 //2. Give us an array of the inventory first and last names
 
-const fullNames = inventors.map(inventor => inventor.first + " " + inventor.last);
+const fullNames = inventors.map(
+  inventor => inventor.first + " " + inventor.last
+);
 console.log(fullNames);
 
 //Array.prototype.sort()
@@ -71,7 +129,6 @@ console.log(fullNames);
 const ordered = inventors.sort(function(a, b) {
   if (a.year > b.year) {
     return 1;
-
   } else {
     return -1;
   }
@@ -89,14 +146,12 @@ for (var i = 0; i < inventors.length; i++) {
 
 console.log(totalYears);
 
-
 //5. Sort the inventors by years lived
 const oldest = inventors.sort(function(a, b) {
   const lastGuy = a.passed - a.year;
   const nextGuy = b.passed - b.year;
   if (lastGuy > nextGuy) {
     return -1;
-
   } else {
     return 1;
   }
@@ -104,50 +159,50 @@ const oldest = inventors.sort(function(a, b) {
 
 console.table(oldest);
 
-
 //6. sort exercise
 // sort the people alphabetically by last name
-const alpha = people.sort
-
+const alpha = people.sort;
 
 //CARDIO DAY 2
 
-const peopleNew = [{
-    name: 'Wes',
+const peopleNew = [
+  {
+    name: "Wes",
     year: 1988
   },
   {
-    name: 'Kait',
+    name: "Kait",
     year: 1986
   },
   {
-    name: 'Irv',
+    name: "Irv",
     year: 1970
   },
   {
-    name: 'Lux',
+    name: "Lux",
     year: 2015
   }
 ];
 
-const comments = [{
-    text: 'Love this!',
+const comments = [
+  {
+    text: "Love this!",
     id: 523423
   },
   {
-    text: 'Super good',
+    text: "Super good",
     id: 823423
   },
   {
-    text: 'You are the best',
+    text: "You are the best",
     id: 2039842
   },
   {
-    text: 'Ramen is my fav food ever',
+    text: "Ramen is my fav food ever",
     id: 123523
   },
   {
-    text: 'Nice Nice Nice!',
+    text: "Nice Nice Nice!",
     id: 542328
   }
 ];
@@ -155,24 +210,22 @@ const comments = [{
 // Some and Every Checks
 // Array.prototype.some() // is at least one person 19 or older?
 const isAdult = peopleNew.some(function(person) {
-  const currentYear = (new Date()).getFullYear();
+  const currentYear = new Date().getFullYear();
   if (currentYear - person.year >= 19) {
     return true;
-
   }
 });
 
-console.log({isAdult});
+console.log({ isAdult });
 // Array.prototype.every() // is everyone 19 or older?
 const allAdult = peopleNew.every(function(person) {
-  const currentYear = (new Date()).getFullYear();
+  const currentYear = new Date().getFullYear();
   if (currentYear - person.year >= 19) {
     return true;
-
   }
 });
 
-console.log({allAdult});
+console.log({ allAdult });
 
 // Array.prototype.find()
 // Find is like filter, but instead returns just the one you are looking for
@@ -180,9 +233,7 @@ console.log({allAdult});
 const comment = comments.find(function(comment) {
   if (comment.id === 823423) {
     return true;
-
   }
-
 });
 console.log(comment);
 

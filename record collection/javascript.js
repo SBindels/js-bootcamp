@@ -35,3 +35,14 @@ function updateRecords(id, prop, value) {
 
 // Alter values below to test your code
 console.log(updateRecords(5439, "artist", "ABBA"));
+
+function updateRecords(id, prop, value) {
+  if (prop === "tracks") {
+  } else if (value === "") {
+    delete collection[id][prop];
+  }
+
+  return collection;
+}
+
+console.log(updateRecords(5439, "artist", "ABBA"));
